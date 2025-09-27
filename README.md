@@ -1,12 +1,71 @@
-# React + Vite
+# Developer Detective App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an interactive web application for a developer-themed "treasure hunt" team game, created for events like DevFest Modena. Participants form teams, scan QR codes to collect clues, and solve a mystery related to a software bug.
 
-Currently, two official plugins are available:
+## How It Works
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  **Login and Teams**: Players log into the app and can choose to create a new team or join an existing one by entering the team name.
+2.  **QR Code Scanning**: Using their device's camera, teams scan hidden QR codes to collect clues. Each clue helps them piece together the solution to a mystery.
+3.  **Solving the Mystery (The 5 Ws)**: Once they have enough clues, the team must answer 5 key questions (the "5 Ws" of a detective, adapted to a software development context) to solve the case:
+    *   **What**: What type of bug is it?
+    *   **Where**: In which file is it located?
+    *   **Who**: Which team introduced the bug?
+    *   **Whom**: Who discovered and fixed the bug?
+    *   **How**: How was the bug fixed?
+4.  **Scoring and Leaderboard**: After submitting the final solution, the app calculates the team's score based on the number of correct answers. A real-time leaderboard shows the ranking of all teams, their scores, and their solution submission times.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*   **Frontend**: [React](https://react.dev/) with [Vite](https://vitejs.dev/) for a fast and modern development experience.
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) for a modern and customizable user interface.
+*   **Backend and Database**: [Firebase](https://firebase.google.com/) (Firestore and Authentication) for user management, real-time game data, and application logic.
+*   **QR Code Scanning**: A JavaScript library for browser-based QR code scanning.
+*   **Icons**: [Lucide React](https://lucide.dev/guide/packages/lucide-react) for clean and consistent icons.
+
+## Setup and Development
+
+### Prerequisites
+
+*   Node.js (version 20.x or higher)
+*   npm (or another package manager like yarn or pnpm)
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone <REPOSITORY_URL>
+    cd <FOLDER_NAME>
+    ```
+
+2.  Install the dependencies:
+    ```bash
+    npm install
+    ```
+
+### Starting the Development Server
+
+To start the application in development mode with hot-reload:
+
+```bash
+npm run dev
+```
+
+The application will be accessible at `http://localhost:5173` (or another port if 5173 is already in use).
+
+### Building for Production
+
+To create an optimized version of the application for production:
+
+```bash
+npm run build
+```
+
+The files will be generated in the `dist/` folder.
+
+### Linting
+
+To check code quality and look for errors:
+
+```bash
+npm run lint
+```
